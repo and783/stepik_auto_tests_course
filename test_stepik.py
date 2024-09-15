@@ -9,7 +9,7 @@ import math
 def test_address(browser, address):
         link = f"https://stepik.org/lesson/{address}/step/1"
         browser.get(link)
-        time.sleep(5)
+        time.sleep(7)
         button1 = browser.find_element(By.ID, "ember458")
         button1.click()
         input1 = browser.find_element(By.ID, "id_login_email")
@@ -18,7 +18,7 @@ def test_address(browser, address):
         input2.send_keys("Trv453695")
         button2 = browser.find_element(By.CLASS_NAME, "sign-form__btn.button_with-loader")
         button2.click()
-        time.sleep(10)
+        time.sleep(15)
         
         try:
                 decide_again = browser.find_element(By.CLASS_NAME, "again-btn.white")
@@ -37,7 +37,10 @@ def test_address(browser, address):
         button3.click()
         time.sleep(7)
         result = browser.find_element(By.CLASS_NAME, "smart-hints__hint").text
+        print()
         print(result)
+        print()
+        assert "Correct!" == result
         time.sleep(5)
         
       
